@@ -1,28 +1,59 @@
 h1 {
-    border: solid black 2px;
+   
     background-color: red;
     font-size: 30 px;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: fantasy;
     padding: 15px;
+    box-shadow: 10px 10px rgb(160, 217, 240), -10px -10px rgb(206, 232, 241), 0px 0px 5px 5px rgb(166, 214, 243);
+    border: 2px solid darkblue;
 }
 
-img  {
+#image  {
     margin-left: 400px;
+    margin-top: 0px;
+    border-radius: 30px; 
 }
 
-.lead   {
+#lead   {
     font-weight: bolder;
-    color:darkblue;
+    font-family: fantasy;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
 }
 
 form {
     padding: 30px;
-    margin-right: 50px;
+    margin-right: 3px;
 }
 
 th  {
     background-color: lightskyblue;
+    font-size: 20px;
+}
+
+#tr-1   {
+    padding-left: 30px;
+}
+
+#th1   {
+    text-align: center;
+    border-bottom: solid black 1px;
+}
+
+#jumbotron  {
+    height: 550px;
+    margin-bottom: 0px;
+}
+
+#very  {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#table  {
+    border: solid black 2px;
+}
+
+.form-group {
+    font-weight: bold;
 }

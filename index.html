@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="assets/train.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    
 ​
 
 </head>
@@ -20,22 +20,22 @@
 
     <div class="jumbotron jumbotron-fluid" id="jumbotron">
         <div class="container">
-          <h1 class="display-4">Thomas's VERY Important Schedule</h1>
+          <h1 class="display-4">Thomas's <span id="very">VERY</span> Important Schedule</h1>
             <br><br>
-          <img src="assets/Thomas_Tank_Engine_1.jpeg">
+          <img id="image" src="assets/Thomas_Tank_Engine_1.jpeg">
             <br><br>
-          <p class="lead"><strong>(In order to avoid confusion and delay)</strong></p>
+          <p class="lead" id="lead"><strong>(In order to avoid confusion and delay)</strong></p>
         </div>
     </div>
 
-    <table class="table table-striped">
+    <table class="table table-striped" id="table">
             <thead>
               <tr>
-                <th scope="col">Train Name</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Frequency (min)</th>
-                <th scope="col">New Arrival</th>
-                <th scope="col">Minutes Away</th>
+                <th id="th1" scope="col">Train Name</th>
+                <th id="th1" scope="col">Destination</th>
+                <th id="th1" scope="col">Frequency (min)</th>
+                <th id="th1" scope="col">New Arrival</th>
+                <th id="th1" scope="col">Minutes Away</th>
               </tr>
             </thead>
             <tbody>
@@ -83,15 +83,26 @@
                 <button type="submit" class="btn btn-primary" id="button">Submit</button>
               </form>
 
+              
+              <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+
+              <script>
+                var firebaseConfig = {
+                  apiKey: "AIzaSyAzOoB3qSWj4w_-JdjzKtA9z7ZS8QYZGyE",
+                  authDomain: "scheduler-a25fb.firebaseapp.com",
+                  databaseURL: "https://scheduler-a25fb.firebaseio.com",
+                  projectId: "scheduler-a25fb",
+                  storageBucket: "scheduler-a25fb.appspot.com",
+                  messagingSenderId: "1084392192796",
+                  appId: "1:1084392192796:web:9833a77e5ff49400"
+                };
+ 
+                firebase.initializeApp(firebaseConfig);
+              </script>
+
+             <script src="assets/train.js"></script>
 
 </body>
-
-
-
-
-
-
-
 
 
 </html>
