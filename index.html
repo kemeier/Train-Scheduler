@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Scheduler</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="assets/train.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+​
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Thomas's VERY Important Schedule</h1>
+            <br><br>
+          <img src="assets/Thomas_Tank_Engine_1.jpeg">
+            <br><br>
+          <p class="lead"><strong>(In order to avoid confusion and delay)</strong></p>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">New Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form>
+                <div class="form-group">
+                  <label for="trainname">Train Name</label>
+                  <input type="text" class="form-control" id="train-name">
+                </div>
+                <div class="form-group">
+                  <label for="destination">Destination</label>
+                  <input type="text" class="form-control" id="destination">
+                </div>
+                <div class="form-group">
+                    <label for="traintime">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="train-time">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency</label>
+                    <input type="text" class="form-control" id="frequency">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>

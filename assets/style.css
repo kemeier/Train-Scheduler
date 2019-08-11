@@ -1,0 +1,28 @@
+h1 {
+    border: solid black 2px;
+    background-color: red;
+    font-size: 30 px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 15px;
+}
+
+img  {
+    margin-left: 400px;
+}
+
+.lead   {
+    font-weight: bolder;
+    color:darkblue;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form {
+    padding: 30px;
+    margin-right: 50px;
+}
+
+th  {
+    background-color: lightskyblue;
+}
