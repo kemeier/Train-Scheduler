@@ -1,5 +1,6 @@
         $(document).ready(function()    {
         
+        //initialize Firebase
         var firebaseConfig = {
                 apiKey: "AIzaSyAzOoB3qSWj4w_-JdjzKtA9z7ZS8QYZGyE",
                 authDomain: "scheduler-a25fb.firebaseapp.com",
@@ -11,7 +12,8 @@
                 };
 
         firebase.initializeApp(firebaseConfig);
-
+        
+        //Represents firebase database
         var train = firebase.database();
         
         //Button that enters user information when clicked
