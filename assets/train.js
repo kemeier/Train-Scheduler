@@ -19,7 +19,7 @@
         //Button that enters user information when clicked
         $("#button").on("click", function(event) {
         alert("clicked");
-        event.preventDefault();
+        event.preventDefault(); 
         
         //Variables for user information entered
         var trainName = $("#train-name").val().trim();
