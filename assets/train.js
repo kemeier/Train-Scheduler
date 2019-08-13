@@ -1,11 +1,8 @@
-
-
-    firebase.initializeApp(firebaseConfig);
-
-    var train = firebase.database();
+        $(document).ready(function()    {
 
         
-    $("#button").on("click", function(event) {
+        
+        $("#button").on("click", function(event) {
         alert("clicked");
         event.preventDefault();
 
@@ -23,5 +20,21 @@
         trainComing: trainTime,
         howOften: frequency
     };
+
+    train.ref().push(newTrain);
+
+    $("#train-name").val("");
+    $("#destination").val("");
+    $("#train-time").val("");
+    $("#frequency").val("");
+
+    return false;
+
+    });
+
+   
+});
+
+
 
     
