@@ -62,16 +62,19 @@ $(document).ready(function () {
         var trainTime = moment(childSnapshot.val().trainComing);
         var frequency = childSnapshot.val().howOften;
         
-
-        console.log('traintime',trainTime);
+        var firstTime = moment(trainTime, "HH:mm");
+    
+        var difference = moment().diff(moment(firstTime));
         // Difference between the current and first times
-        var difference = moment(trainTime).toNow();
-        console.log("l68",difference);
+        console.log(difference);
+
         // Time apart (remainder)
         var remainder = difference % frequency;
         console.log(remainder);
+
         // Minutes until next train comes
         var minTillTrain = frequency - remainder;
+
 
         //Time next train comes
         var nextTrain = moment().add(minTillTrain, "minutes").format("hh:mm");
@@ -84,5 +87,7 @@ $(document).ready(function () {
 
 });
 
-
+var firstTime = moment(trainTime, "HH:mm");
+    
+var difference = moment().diff(moment(firstTime));
 
