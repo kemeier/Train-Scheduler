@@ -59,7 +59,7 @@ $(document).ready(function () {
 
         var trainName = childSnapshot.val().name;
         var destination = childSnapshot.val().whereGoing;
-        var trainTime = moment(childSnapshot.val().trainComing);
+        var trainTime = (childSnapshot.val().trainComing);
         var frequency = childSnapshot.val().howOften;
         
         var firstTime = moment(trainTime, "HH:mm");
