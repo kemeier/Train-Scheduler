@@ -1,26 +1,26 @@
-        $(document).ready(function()    {
-        
-        //initialize Firebase
-        var firebaseConfig = {
-                apiKey: "AIzaSyAzOoB3qSWj4w_-JdjzKtA9z7ZS8QYZGyE",
-                authDomain: "scheduler-a25fb.firebaseapp.com",
-                databaseURL: "https://scheduler-a25fb.firebaseio.com",
-                projectId: "scheduler-a25fb",
-                storageBucket: "scheduler-a25fb.appspot.com",
-                messagingSenderId: "1084392192796",
-                appId: "1:1084392192796:web:9833a77e5ff49400"
-                };
+$(document).ready(function () {
 
-        firebase.initializeApp(firebaseConfig);
-        
-        //Represents firebase database
-        var train = firebase.database();
-        
-        //Button that enters user information when clicked
-        $("#button").on("click", function(event) {
+    //initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyAzOoB3qSWj4w_-JdjzKtA9z7ZS8QYZGyE",
+        authDomain: "scheduler-a25fb.firebaseapp.com",
+        databaseURL: "https://scheduler-a25fb.firebaseio.com",
+        projectId: "scheduler-a25fb",
+        storageBucket: "",
+        messagingSenderId: "1084392192796",
+        appId: "1:1084392192796:web:9833a77e5ff49400"
+      };
+
+    firebase.initializeApp(firebaseConfig);
+
+    //Represents firebase database
+    var train = firebase.database();
+
+    //Button that enters user information when clicked
+    $("#button").on("click", function (event) {
         alert("clicked");
-        event.preventDefault(); 
-        
+        event.preventDefault();
+
         //Variables for user information entered
         var trainName = $("#train-name").val().trim();
         var destination = $("#destination").val().trim();
@@ -31,14 +31,14 @@
 
         // Current Time
         var currentTime = moment();
-	    console.log("CURRENT TIME: " +  moment(currentTime).format("hh:mm"));
+        console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
         //Contains train information   
         var newTrain = {
-        name: trainName,
-        whereGoing: destination,
-        trainComing: trainTime,
-        howOften: frequency
+            name: trainName,
+            whereGoing: destination,
+            trainComing: trainTime.format("HH:mm"),
+            howOften: frequency
         };
 
         //Pushes new train information to firebase
@@ -52,36 +52,37 @@
 
         return false;
 
-        });
+    });
 
-        //Tells Firebase to return info to add back onto the webpage
-        train.ref().on("child_added", function(childSnapshot) {
+    //Tells Firebase to return info to add back onto the webpage
+    train.ref().on("child_added", function (childSnapshot) {
 
         var trainName = childSnapshot.val().name;
         var destination = childSnapshot.val().whereGoing;
-        var trainTime = childSnapshot.val().trainComing;
+        var trainTime = moment(childSnapshot.val().trainComing);
         var frequency = childSnapshot.val().howOften;
+        
 
+        console.log('traintime',trainTime);
         // Difference between the current and first times
-        var difference =  moment().diff(moment(trainTime),"minutes");
-
+        var difference = moment(trainTime).toNow();
+        console.log("l68",difference);
         // Time apart (remainder)
         var remainder = difference % frequency;
-
+        console.log(remainder);
         // Minutes until next train comes
         var minTillTrain = frequency - remainder;
 
         //Time next train comes
-        var nextTrain = moment().add(minTillTrain, "minutes");
+        var nextTrain = moment().add(minTillTrain, "minutes").format("hh:mm");
 
         //Add new information to display on page
         $("#table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + minTillTrain + "</td></tr>");
 
     });
-    
-   
+
+
 });
 
 
 
-    
