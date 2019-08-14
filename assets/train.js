@@ -87,7 +87,5 @@ $(document).ready(function () {
 
 });
 
-var firstTime = moment(trainTime, "HH:mm");
-    
-var difference = moment().diff(moment(firstTime));
+
 
